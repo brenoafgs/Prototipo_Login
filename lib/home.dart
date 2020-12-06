@@ -10,12 +10,14 @@ class TelaHome extends StatefulWidget {
 }
 
 class _TelaHomeState extends State<TelaHome> {
-  String link = '';
+  String url = '';
 
+  /// Callback chamado para definir o url.
   void mostraImagem() {
-    link =
-        'https://www.concettolabs.com/blog/wp-content/uploads/2019/07/flutter-desktop-app.jpg';
-    setState(() {});
+    setState(() {
+      url = 'https://www.concettolabs.com/blog/wp-content/uploads/2019'
+          '/07/flutter-desktop-app.jpg';
+    });
   }
 
   @override
@@ -34,9 +36,9 @@ class _TelaHomeState extends State<TelaHome> {
             Container(
               width: 480,
               height: 240,
-              child: (link == null || link.isEmpty)
+              child: (url == null || url.isEmpty)
                   ? Container()
-                  : Image.network(link, fit: BoxFit.fill),
+                  : Image.network(url, fit: BoxFit.fill),
             ),
             FlatButton(
               color: Colors.lightGreen,
