@@ -34,7 +34,7 @@ class _TelaHomeState extends State<TelaHome> {
             Container(
               width: 480,
               height: 240,
-              child: (link == null && link.isEmpty)
+              child: (link == null || link.isEmpty)
                   ? Container()
                   : Image.network(link, fit: BoxFit.fill),
             ),
