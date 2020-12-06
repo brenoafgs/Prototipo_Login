@@ -14,10 +14,8 @@ class _TelaHomeState extends State<TelaHome> {
 
   void mostraImagem() {
     link =
-    'https://www.concettolabs.com/blog/wp-content/uploads/2019/07/flutter-desktop-app.jpg';
-    setState(() {
-
-    });
+        'https://www.concettolabs.com/blog/wp-content/uploads/2019/07/flutter-desktop-app.jpg';
+    setState(() {});
   }
 
   @override
@@ -34,9 +32,12 @@ class _TelaHomeState extends State<TelaHome> {
           children: [
             Text('Bem vindo, ${widget.email}'),
             Container(
-                width: 480,
-                height: 240,
-                child: Image.network(link, fit: BoxFit.fill)),
+              width: 480,
+              height: 240,
+              child: (link == null && link.isEmpty)
+                  ? Container()
+                  : Image.network(link, fit: BoxFit.fill),
+            ),
             FlatButton(
               color: Colors.lightGreen,
               padding: EdgeInsets.all(10),
