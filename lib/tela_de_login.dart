@@ -73,7 +73,7 @@ class _TelaState extends State<Tela> {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => TelaHome(email)));
       } else {
-        avisoErro = 'É preciso inserir login e senha';
+        avisoErro = 'É necessário inserir login e senha';
       }
     });
   }
